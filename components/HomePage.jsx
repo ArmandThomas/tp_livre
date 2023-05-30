@@ -17,7 +17,7 @@ export const HomePage = () => {
     const [showModal, setShowModal] = useState(false);
     const [typeModal, setTypeModal] = useState(undefined);
 
-    const livreFiltered = filter === "c0" ? LIVRES : LIVRES.filter(livre => livre.categorieId.includes(filter));
+    const livreFiltered = filter === "c0" ? listLivre : listLivre.filter(livre => livre.categorieId.includes(filter));
 
     const closeModal = () => {
         setShowModal(false);
@@ -40,14 +40,15 @@ export const HomePage = () => {
     }
 
     const createANewLivre = (newLivre) => {
+        console.log(newLivre)
         setListLivre([...listLivre, {...newLivre, id: `m${listLivre.length}`}]);
-        console.log("newLivre", newLivre)
         closeModal();
     }
 
 
     const categoriesWithMore = [...listCategory, {genre: "+", couleur: "#fff", id: "add"}];
 
+    console.log(livreFiltered)
 
     return (
         <ViewHomePage>

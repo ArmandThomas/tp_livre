@@ -54,9 +54,9 @@ export const AddLivre = ({ listCategories, createANewLivre }) => {
                 () =>  createANewLivre({
                     titre,
                     description,
-                    imageURL,
+                    imageUrl : imageURL,
                     tomes,
-                    selectedCategories,
+                    categorieId : selectedCategories,
                     enCours
                 })
             }>
